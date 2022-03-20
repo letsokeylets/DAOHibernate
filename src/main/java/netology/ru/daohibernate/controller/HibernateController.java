@@ -16,7 +16,7 @@ public class HibernateController {
     private final HibernateRepository hibernateRepository;
 
     @GetMapping("/persons/by-city")
-    public String getProduct(@RequestParam("city") String city) {
+    public String getPersons(@RequestParam("city") String city) {
         return hibernateRepository.getPersonsByCity(city).toString();
     }
 }
