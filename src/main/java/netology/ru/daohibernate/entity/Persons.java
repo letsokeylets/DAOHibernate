@@ -23,4 +23,15 @@ public class Persons {
 
     @Column
     private String cityOfLiving;
+
+    @Override
+    public String toString() {
+        return "Persons{" +
+                "name=" + infoPerson.getName() + " " +
+                ", surname=" + infoPerson.getSurname() + " " +
+                ", age=" + infoPerson.getAge() + " " +
+                ", phoneNumber='" + phoneNumber + " " +
+                ", cityOfLiving='" + cityOfLiving + " " +
+                "}";
+    }
 }
