@@ -18,13 +18,13 @@ import java.util.List;
 @AllArgsConstructor
 public class HibernateRepository {
 
-    private final String sqlSelect = "select p from Persons p where p.cityOfLiving = :cityName";
+    private static final String SQL_SELECT = "select p from Persons p where p.cityOfLiving = :cityName";
 
     @PersistenceContext
     private EntityManager entityManager;
 
     public List<Persons> getPersonsByCity(String city) {
-        Query query = entityManager.createQuery(sqlSelect, Persons.class)
+        Query query = entityManager.createQuery(SQL_SELECT, Persons.class)
                 .setParameter("cityName", city);
         return query.getResultList();
     }
